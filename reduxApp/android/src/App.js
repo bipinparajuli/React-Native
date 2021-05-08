@@ -22,7 +22,7 @@ const App = () => {
       <StatusBar backgroundColor="#0f4c75" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Add"
+          initialRouteName="Home"
           screenOptions={{
             headerStyle: {
               backgroundColor: '#0f4c75',

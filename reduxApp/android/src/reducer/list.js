@@ -4,6 +4,8 @@ import { ADD_SEASON,REMOVE_SEASON,MARK_COMPLETE } from '../action/action.type'
 const initialState = []
 
 export default (state = initialState,action) => {
+
+    console.log("STATE",state)
     
     switch(action.type){
     

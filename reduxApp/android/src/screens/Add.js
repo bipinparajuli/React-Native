@@ -34,14 +34,15 @@ const Add = ({navigation, addSeason}) => {
 return alert("Please add both fields")
         }
         const seasonToAdd = {
-            id:shortid.genetate(),
+            id:shortid.generate(),
             name,
             totalNoSeason,
             isWatched:false
         }
 
         addSeason(seasonToAdd)
-        navigation.naviagte('Home')
+        navigation.navigate('Home')
+        // navigation.naviagte('Home')
     }
     catch(err){
         console.log(err)

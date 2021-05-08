@@ -42,12 +42,13 @@ const Home = ({navigation,markComplete, removeSeason,listState}) => {
           <H1 style={styles.heading}>Next Series to Watch</H1>
           <List>
             {listState.map((season) => (
-              <ListItem icon  style={styles.listItem} noBorder>
+              <ListItem icon key={season.id}  style={styles.listItem} noBorder>
                 <Left>
                   <Button
                     style={styles.actionButton}
                     onPress={() => {
-                      console.log(season.id);
+                      console.log("SEASON ID",season.id);
+                      
                       removeSeason(season.id);
                     }}
                     danger>
@@ -73,7 +74,12 @@ const Home = ({navigation,markComplete, removeSeason,listState}) => {
       <Fab
         style={{backgroundColor: '#5067FF'}}
         position="bottomRight"
-        onPress={() => navigation.navigate('Add')}>
+        onPress={() => 
+        {
+          console.log("I have to navigate")
+          navigation.navigate('Add')
+        }
+        }>
         <Icon name="add" />
       </Fab>
     </ScrollView>
