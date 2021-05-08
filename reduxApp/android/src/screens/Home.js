@@ -21,7 +21,7 @@ import {
 } from 'native-base'
 
 import propTypes from 'prop-types'
-import {connect} from 'redux'
+import {connect} from 'react-redux'
 
 import { markComplete,removeSeason } from "../action/list"
 
@@ -42,7 +42,7 @@ const Home = ({navigation,markComplete, removeSeason,listState}) => {
           <H1 style={styles.heading}>Next Series to Watch</H1>
           <List>
             {listState.map((season) => (
-              <ListItem icon key={season.id} style={styles.listItem} noBorder>
+              <ListItem icon  style={styles.listItem} noBorder>
                 <Left>
                   <Button
                     style={styles.actionButton}
@@ -83,6 +83,7 @@ const Home = ({navigation,markComplete, removeSeason,listState}) => {
 //TODO: redux config
 
 const mapStateToProps = (state) => ({
+  // {console.log(state)}
 listState: state.list
 })
 
@@ -101,7 +102,7 @@ listState: propTypes.array.isRequired,
 
 
 //TODO: Redux export
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default connect(mapStateToProps,mapDispatchToProps )(Home);
 
 // empty container style will be work in the loading as well as the empty message screen
 const styles = StyleSheet.create({

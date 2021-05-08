@@ -22,7 +22,7 @@ const App = () => {
       <StatusBar backgroundColor="#0f4c75" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Add"
           screenOptions={{
             headerStyle: {
               backgroundColor: '#0f4c75',
@@ -34,9 +34,12 @@ const App = () => {
             },
           }}>
           <Stack.Screen name="Home" component={Home} />
-          {/* <Stack.Screen name="Add" component={Add} /> */}
+          <Stack.Screen name="Add" component={Add} />
         </Stack.Navigator>
       </NavigationContainer>
   </Provider>  
   );
 };
+
+
+export default App

@@ -19,7 +19,7 @@ import shortid from 'shortid';
 
 import {addSeason} from '../action/list'
 
-import {connect} from 'redux'
+import {connect} from 'react-redux'
 
 const Add = ({navigation, addSeason}) => {
   // to hold name of the season and total no of the season
@@ -31,7 +31,7 @@ const Add = ({navigation, addSeason}) => {
     try{
         if(!name || !totalNoSeason)
         {
-
+return alert("Please add both fields")
         }
         const seasonToAdd = {
             id:shortid.genetate(),
@@ -39,6 +39,7 @@ const Add = ({navigation, addSeason}) => {
             totalNoSeason,
             isWatched:false
         }
+
         addSeason(seasonToAdd)
         navigation.naviagte('Home')
     }
